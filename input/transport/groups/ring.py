@@ -298,5 +298,11 @@ L0: R_ring
         
     L1: S_centered_ring
         L2: Thioether_ring
+    
+    L1: N_centered_ring
+        L2: N3s_ring
+            L3: N3s-RRH_ring #>NH
+            L3: N3s-RRR_ring # >N-
+        L2: N3d #-N=
 """
 )

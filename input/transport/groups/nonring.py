@@ -782,6 +782,7 @@ L0: R
             L3: Aldehyde_Ccentered
         L2: CddR2
         L2: CtHR
+            L3: Ct-HN3t #CN
         L2: CtR2
         
     L1: O_centered
@@ -799,5 +800,15 @@ L0: R
     L1: S_centered
         L2: Thiol
         L2: Thioether
+        
+    L1: N_centered
+        L2: N2d
+        L2: N3s
+            L3: N3s-RHH #NH2
+            L3: N3s-RRH #>NH
+            L3: N3s-RRR #>N-
+        L2: N3d # -N=
+        L2: N5d
+            L3: N5d-OdOdR #NO2
 """
 )
