@@ -13,9 +13,9 @@ import time
 import subprocess
 import os
 
-from rmgpy.data.rmg import RMGDatabase
 from rmgpy.kinetics import KineticsData
 from rmgpy.data.kinetics import KineticsDatabase, KineticsGroups
+from rmgpy.data.rmg import RMGDatabase
 
 ################################################################################
 
@@ -29,6 +29,14 @@ def getUsername():
     name = ''
     email = ''
     try:
+        login = os.getlogin()
+    except OSError:
+        try:
+            import pwd
+            login = pwd.getpwuid(os.geteuid()).pw_name
+        except:
+            login = "unknown"
+    try:
         p=subprocess.Popen('git config --get user.name'.split(),
                 stdout=subprocess.PIPE)
         name = p.stdout.read()
@@ -38,8 +46,8 @@ def getUsername():
         name = name.strip()
     else:
         print "Couldn't find user.name from git."
-        name = os.getlogin()
-    
+        name = login
+
     try:
         p=subprocess.Popen('git config --get user.email'.split(),
                 stdout=subprocess.PIPE)
@@ -50,7 +58,7 @@ def getUsername():
         email = email.strip()
     else:
         print "Couldn't find user.email from git."
-        email = os.getlogin() + "@" + os.uname()[1]
+        email = login + "@" + os.uname()[1]
     
     return '{0} <{1}>'.format(name,email)
 
@@ -76,7 +84,8 @@ def setHistory(database, user):
         for label, entry in family.groups.entries.iteritems():
             entry.history.append(event)
         for label, entry in family.rules.entries.iteritems():
-            entry.history.append(event)
+            for item in entry:
+                item.history.append(event)
         for depository in family.depositories.values():
             for label, entry in depository.entries.iteritems():
                 entry.history.append(event)

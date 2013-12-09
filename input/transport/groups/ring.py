@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+"""
+Note the Pc contributions are all the negative of what is in Table 3 of Joback's thesis.
+The Tb contributions are from table 13.
+"""
+
 entry(
     index = 0,
     label = "R_ring",
@@ -202,6 +207,64 @@ u"""
 )
 
 entry(
+    index = 9,
+    label = "Cddring",
+    group =
+"""
+1 * C 0 {2,D} {3,D}
+2 R!H 0 {1,D}
+3 R!H 0 {1,D}
+""",
+    transportGroup = CriticalPointGroupContribution(
+        Tc = 0.0143,
+        Pc = 0.0008,
+        Vc = 32,
+        Tb = 31.01,
+        structureIndex = 1,
+    ),
+    shortDesc = u"""Made up value for R=C=R in ring""",
+    longDesc = 
+u"""
+Made up value for R=C=R in a ring.
+Without this existing, we crash.
+Joback's thesis has no data for such species.
+I'm copying R=CH-R in a ring.
+""",
+    history = [
+        ("2013/11/22 00:01:03","Richard West <r.west@neu.edu>","action",
+        """Richard West <r.west@neu.edu> made this up"""),    ],
+)
+
+entry(
+    index = 10,
+    label = "Ctring",
+    group =
+"""
+1 * C 0 {2,T}
+2 R!H 0 {1,T}
+""",
+    transportGroup = CriticalPointGroupContribution(
+        Tc = 0.0143,
+        Pc = 0.0008,
+        Vc = 32,
+        Tb = 31.01,
+        structureIndex = 1,
+    ),
+    shortDesc = u"""Made up value for C#R (triple bond) in ring""",
+    longDesc = 
+u"""
+Made up value for triple bond in a ring.
+Without this existing, we crash.
+Joback's thesis has no data for such species.
+I'm copying R=CH-R in a ring.
+""",
+    history = [
+        ("2013/11/22 19:22:03","Richard West <r.west@neu.edu>","action",
+        """Richard West <r.west@neu.edu> made this up"""),    ],
+)
+
+
+entry(
     index = 6,
     label = "Ether_ring",
     group =
@@ -291,7 +354,8 @@ L0: R_ring
         L2: CdringR3
             L3: Ketone_ring
         L2: CdringHR2
-        //L2: CddringR2 (?) The lack of this node is causing RMG to throw a warning message: "Transport Group not found"
+        L2: Cddring
+        L2: Ctring
     
     L1: O_centered_ring
         L2: Ether_ring

@@ -2,20 +2,20 @@
 # encoding: utf-8
 
 
-'''
+
 entry(
     index = 1,
     label = "AR",
     molecule =
 """
-
+1 Ar 0 4
 """,
     transport = TransportData(
         shapeIndex = 0,
         epsilon = (136.500 * 8.3145, 'J/mol'),
         sigma = (3.330, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for AR""",
@@ -27,21 +27,21 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
+
 
 entry(
     index = 2,
-    label = "C",
+    label = "C(T)",
     molecule =
 """
-1 C 4
+1 C 4T
 """,
     transport = TransportData(
         shapeIndex = 0,
         epsilon = (71.400 * 8.3145, 'J/mol'),
         sigma = (3.298, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C""",
@@ -67,7 +67,7 @@ entry(
         epsilon = (97.530 * 8.3145, 'J/mol'),
         sigma = (3.621, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (1.760, 'C*m^2*V^-1'),
+        polarizability = (1.760, 'angstroms^3'),
         rotrelaxcollnum = 4.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2""",
@@ -94,7 +94,7 @@ entry(
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2O""",
@@ -120,7 +120,7 @@ entry(
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CN2""",
@@ -139,15 +139,16 @@ entry(
     label = "C2H",
     molecule =
 """
-1 C 1 {2,T}
-2 C 0 {1,T}
+1 H 0 {2,S}
+2 C 0 {1,S} {3,T}
+3 C 1 {2,T}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (209.000 * 8.3145, 'J/mol'),
         sigma = (4.100, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.500,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2H""",
@@ -165,15 +166,17 @@ entry(
     label = "C2H2",
     molecule =
 """
-1 C 0 {2,T}
-2 C 0 {1,T}
+1 H 0 {2,S}
+2 C 0 {1,S} {3,T}
+3 C 0 {2,T} {4,S}
+4 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (209.000 * 8.3145, 'J/mol'),
         sigma = (4.100, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.500,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2H2""",
@@ -191,16 +194,19 @@ entry(
     label = "C2H2OH",
     molecule =
 """
-1 C 1 {2,D}
-2 C 0 {1,D} {3,S}
-3 O 0 {2,S}
+1 C 1 {2,D} {4,S}
+2 C 0 {1,D} {3,S} {5,S}
+3 O 0 {2,S} {6,S}
+4 H 0 {1,S}
+5 H 0 {2,S}
+6 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (224.700 * 8.3145, 'J/mol'),
         sigma = (4.162, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2H2OH""",
@@ -218,15 +224,18 @@ entry(
     label = "C2H3",
     molecule =
 """
-1 C 1 {2,D}
-2 C 0 {1,D}
+1 H 0 {2,S}
+2 C 1 {1,S} {3,D}
+3 C 0 {2,D} {4,S} {5,S}
+4 H 0 {3,S}
+5 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (209.000 * 8.3145, 'J/mol'),
         sigma = (4.100, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2H3""",
@@ -244,15 +253,19 @@ entry(
     label = "C2H4",
     molecule =
 """
-1 C 0 {2,D}
-2 C 0 {1,D}
+1 H 0 {3,S}
+2 H 0 {3,S}
+3 C 0 {1,S} {2,S} {4,D}
+4 C 0 {3,D} {5,S} {6,S}
+5 H 0 {4,S}
+6 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (280.800 * 8.3145, 'J/mol'),
         sigma = (3.971, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.500,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2H4""",
@@ -270,15 +283,20 @@ entry(
     label = "C2H5",
     molecule =
 """
-1 C 1 {2,S}
-2 C 0 {1,S}
+1 C 1 {2,S} {3,S} {4,S}
+2 H 0 {1,S}
+3 H 0 {1,S}
+4 C 0 {1,S} {5,S} {6,S} {7,S}
+5 H 0 {4,S}
+6 H 0 {4,S}
+7 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (252.300 * 8.3145, 'J/mol'),
         sigma = (4.302, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.500,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2H5""",
@@ -296,15 +314,21 @@ entry(
     label = "C2H6",
     molecule =
 """
-1 C 0 {2,S}
-2 C 0 {1,S}
+1 C 0 {2,S} {3,S} {4,S} {5,S}
+2 H 0 {1,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 H 0 {5,S}
+7 H 0 {5,S}
+8 H 0 {5,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (252.300 * 8.3145, 'J/mol'),
         sigma = (4.302, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.500,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2H6""",
@@ -330,7 +354,7 @@ entry(
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2N""",
@@ -357,7 +381,7 @@ entry(
         epsilon = (349.000 * 8.3145, 'J/mol'),
         sigma = (4.361, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C2N2""",
@@ -376,16 +400,18 @@ entry(
     label = "C3H2",
     molecule =
 """
-1 C 1 {2,D}
+1 C 1 {2,D} {4,S}
 2 C 0 {1,D} {3,D}
-3 C 1 {2,D}
+3 C 1 {2,D} {5,S}
+4 H 0 {1,S}
+5 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (209.000 * 8.3145, 'J/mol'),
         sigma = (4.100, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C3H2""",
@@ -411,7 +437,7 @@ entry(
         epsilon = (252.000 * 8.3145, 'J/mol'),
         sigma = (4.760, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C3H4""",
@@ -430,16 +456,22 @@ entry(
     label = "C3H6",
     molecule =
 """
-1 C 0 {2,D}
-2 C 0 {1,D} {3,S}
-3 C 0 {2,S}
+1 C 0 {2,D} {4,S} {5,S}
+2 C 0 {1,D} {3,S} {6,S}
+3 C 0 {2,S} {7,S} {8,S} {9,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {2,S}
+7 H 0 {3,S}
+8 H 0 {3,S}
+9 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (266.800 * 8.3145, 'J/mol'),
         sigma = (4.982, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C3H6""",
@@ -465,7 +497,7 @@ entry(
         epsilon = (266.800 * 8.3145, 'J/mol'),
         sigma = (4.982, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C3H7""",
@@ -492,7 +524,7 @@ entry(
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C4H6""",
@@ -511,16 +543,23 @@ entry(
     label = "I*C3H7",
     molecule =
 """
-1 C 0 {2,S}
-2 C 1 {1,S} {3,S}
-3 C 0 {2,S}
+1 C 0 {2,S} {4,S} {5,S} {6,S}
+2 C 1 {1,S} {3,S} {7,S}
+3 C 0 {2,S} {8,S} {9,S} {10,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {2,S}
+8 H 0 {3,S}
+9 H 0 {3,S}
+10 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (266.800 * 8.3145, 'J/mol'),
         sigma = (4.982, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for I*C3H7""",
@@ -538,17 +577,23 @@ entry(
     label = "N*C3H7",
     molecule =
 """
-1 C 1 {2,S}
-2 C 0 {1,S} {3,S}
-3 C 0 {2,S}
-
+1 C 1 {2,S} {4,S} {5,S}
+2 C 0 {1,S} {3,S} {6,S} {7,S}
+3 C 0 {2,S} {8,S} {9,S} {10,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {2,S}
+7 H 0 {2,S}
+8 H 0 {3,S}
+9 H 0 {3,S}
+10 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (266.800 * 8.3145, 'J/mol'),
         sigma = (4.982, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for N*C3H7""",
@@ -566,16 +611,24 @@ entry(
     label = "C3H8",
     molecule =
 """
-1 C 0 {2,S}
-2 C 0 {1,S} {3,S}
-3 C 0 {2,S}
+1  C 0 {2,S} {3,S} {4,S} {5,S}
+2  H 0 {1,S}
+3  H 0 {1,S}
+4  H 0 {1,S}
+5  C 0 {1,S} {6,S} {7,S} {8,S}
+6  H 0 {5,S}
+7  H 0 {5,S}
+8  C 0 {5,S} {9,S} {10,S} {11,S}
+9  H 0 {8,S}
+10 H 0 {8,S}
+11 H 0 {8,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (266.800 * 8.3145, 'J/mol'),
         sigma = (4.982, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C3H8""",
@@ -596,14 +649,15 @@ entry(
 1 C 1 {2,T}
 2 C 0 {1,T} {3,S}
 3 C 0 {2,S} {4,T}
-4 C 0 {3,T}
+4 C 0 {3,T} {5,S}
+5 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C4H""",
@@ -621,17 +675,19 @@ entry(
     label = "C4H2",
     molecule =
 """
-1 C 0 {2,T}
+1 C 0 {2,T} {5,S}
 2 C 0 {1,T} {3,S}
 3 C 0 {2,S} {4,T}
-4 C 0 {3,T}
+4 C 0 {3,T} {6,S}
+5 H 0 {1,S}
+6 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C4H2""",
@@ -657,7 +713,7 @@ entry(
         epsilon = (224.700 * 8.3145, 'J/mol'),
         sigma = (4.162, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C4H2OH""",
@@ -684,7 +740,7 @@ entry(
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.176, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C4H8""",
@@ -703,17 +759,26 @@ entry(
     label = "C4H9",
     molecule =
 """
-1 C 1 {2,S}
-2 C 0 {1,S} {3,S}
-3 C 0 {2,S} {4,S}
-4 C 0 {3,S}
+1 C 1 {2,S} {5,S} {6,S}
+2 C 0 {1,S} {3,S} {7,S} {8,S}
+3 C 0 {2,S} {4,S} {9,S} {10,S}
+4 C 0 {3,S} {11,S} {12,S} {13,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {2,S}
+8 H 0 {2,S}
+9 H 0 {3,S}
+10 H 0 {3,S}
+11 H 0 {4,S}
+12 H 0 {4,S}
+13 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.176, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C4H9""",
@@ -731,17 +796,26 @@ entry(
     label = "I*C4H9",
     molecule =
 """
-1 C 0 {2,S}
-2 C 1 {1,S} {3,S}
-3 C 0 {2,S} {4,S}
-4 C 0 {3,S}
+1 C 0 {2,S} {5,S} {6,S} {7,S}
+2 C 1 {1,S} {3,S} {8,S}
+3 C 0 {2,S} {4,S} {9,S} {10,S}
+4 C 0 {3,S} {11,S} {12,S} {13,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {1,S}
+8 H 0 {2,S}
+9 H 0 {3,S}
+10 H 0 {3,S}
+11 H 0 {4,S}
+12 H 0 {4,S}
+13 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.176, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for I*C4H9""",
@@ -767,7 +841,7 @@ entry(
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C5H2""",
@@ -794,7 +868,7 @@ entry(
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C5H3""",
@@ -821,7 +895,7 @@ entry(
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C6H2""",
@@ -848,7 +922,7 @@ entry(
         epsilon = (412.300 * 8.3145, 'J/mol'),
         sigma = (5.349, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C6H5""",
@@ -875,7 +949,7 @@ entry(
         epsilon = (450.000 * 8.3145, 'J/mol'),
         sigma = (5.500, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C6H5O""",
@@ -902,7 +976,7 @@ entry(
         epsilon = (450.000 * 8.3145, 'J/mol'),
         sigma = (5.500, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C5H5OH""",
@@ -929,7 +1003,7 @@ entry(
         epsilon = (412.300 * 8.3145, 'J/mol'),
         sigma = (5.349, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C6H6""",
@@ -956,7 +1030,7 @@ entry(
         epsilon = (412.300 * 8.3145, 'J/mol'),
         sigma = (5.349, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for C6H7""",
@@ -972,17 +1046,18 @@ u"""
 
 entry(
     index = 37,
-    label = "CH",
+    label = "CH(Q)",
     molecule =
 """
-1 C 3
+1 C 3Q {2,S}
+2 H 0  {1,S}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (80.000 * 8.3145, 'J/mol'),
         sigma = (2.750, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH""",
@@ -1000,14 +1075,16 @@ entry(
     label = "CH2",
     molecule =
 """
-1 C 2T
+1 C 2T {2,S} {3,S}
+2 H 0  {1,S}
+3 H 0  {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (144.000 * 8.3145, 'J/mol'),
         sigma = (3.800, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2""",
@@ -1025,14 +1102,16 @@ entry(
     label = "CH2(S)",
     molecule =
 """
-1 C 2S
+1 C 2S {2,S} {3,S}
+2 H 0  {1,S}
+3 H 0  {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (144.000 * 8.3145, 'J/mol'),
         sigma = (3.800, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2(S)""",
@@ -1058,7 +1137,7 @@ entry(
         epsilon = (144.000 * 8.3145, 'J/mol'),
         sigma = (3.800, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2*""",
@@ -1077,17 +1156,21 @@ entry(
     label = "CH2CHCCH",
     molecule =
 """
-1 C 0 {2,D}
-2 C 0 {1,D} {3,S}
+1 C 0 {2,D} {5,S} {6,S}
+2 C 0 {1,D} {3,S} {7,S}
 3 C 0 {2,S} {4,T}
-4 C 0 {3,T}
+4 C 0 {3,T} {8,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {2,S}
+8 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2CHCCH""",
@@ -1105,17 +1188,22 @@ entry(
     label = "CH2CHCCH2",
     molecule =
 """
-1 C 0 {2,D}
-2 C 0 {1,D} {3,S}
+1 C 0 {2,D} {5,S} {6,S}
+2 C 0 {1,D} {3,S} {7,S}
 3 C 1 {2,S} {4,D}
-4 C 0 {3,D}
+4 C 0 {3,D} {8,S} {9,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {2,S}
+8 H 0 {4,S}
+9 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2CHCCH2""",
@@ -1133,16 +1221,21 @@ entry(
     label = "CH2CHCH2",
     molecule =
 """
-1 C 1 {2,S}
-2 C 0 {1,S} {3,D}
-3 C 0 {2,D}
+1 C 1 {2,S} {4,S} {5,S}
+2 C 0 {1,S} {3,D} {6,S}
+3 C 0 {2,D} {7,S} {8,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {2,S}
+7 H 0 {3,S}
+8 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (260.000 * 8.3145, 'J/mol'),
         sigma = (4.850, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2CHCH2""",
@@ -1160,17 +1253,22 @@ entry(
     label = "CH2CHCHCH",
     molecule =
 """
-1 C 0 {2,D}
-2 C 0 {1,D} {3,S}
-3 C 0 {2,S} {4,D}
-4 C 1 {3,D}
+1 C 0 {2,D} {5,S} {6,S}
+2 C 0 {1,D} {3,S} {7,S}
+3 C 0 {2,S} {4,D} {8,S}
+4 C 1 {3,D} {9,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {2,S}
+8 H 0 {3,S}
+9 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2CHCHCH""",
@@ -1188,17 +1286,23 @@ entry(
     label = "CH2CHCHCH2",
     molecule =
 """
-1 C 0 {2,D}
-2 C 0 {1,D} {3,S}
-3 C 0 {2,S} {4,D}
-4 C 0 {3,D}
+1 C 0 {2,D} {5,S} {6,S}
+2 C 0 {1,D} {3,S} {7,S}
+3 C 0 {2,S} {4,D} {8,S}
+4 C 0 {3,D} {9,S} {10,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {2,S}
+8 H 0 {3,S}
+9 H 0 {4,S}
+10 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2CHCHCH2""",
@@ -1216,16 +1320,18 @@ entry(
     label = "CH2CO",
     molecule =
 """
-1 C 0 {2,D}
-2 C 0 {1,D} {3,D}
-3 O 0 {2,D}
+1 C 0 {2,S} {3,S} {4,D}
+2 H 0 {1,S}
+3 H 0 {1,S}
+4 C 0 {1,D} {5,D}
+5 O 0 {4,D}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (436.000 * 8.3145, 'J/mol'),
         sigma = (3.970, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2CO""",
@@ -1243,15 +1349,17 @@ entry(
     label = "CH2O",
     molecule =
 """
-1 C 0 {2,D}
-2 O 0 {1,D}
+1 C 0 {2,S} {3,S} {4,D}
+2 H 0 {1,S}
+3 H 0 {1,S}
+4 O 0 {1,D}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (498.000 * 8.3145, 'J/mol'),
         sigma = (3.590, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2O""",
@@ -1269,15 +1377,18 @@ entry(
     label = "CH2OH",
     molecule =
 """
-1 C 1 {2,S}
-2 O 0 {1,S}
+1 C 1 {2,S} {3,S} {4,S}
+2 H 0 {1,S}
+3 H 0 {1,S}
+4 O 0 {1,S} {5,S}
+5 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (417.000 * 8.3145, 'J/mol'),
         sigma = (3.690, 'angstroms'),
         dipoleMoment = (1.700, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2OH""",
@@ -1295,14 +1406,17 @@ entry(
     label = "CH3",
     molecule =
 """
-1 C 1
+1 C 1 0 {2,S} {3,S} {4,S}
+2 H 0 0 {1,S}
+3 H 0 0 {1,S}
+4 H 0 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (144.000 * 8.3145, 'J/mol'),
         sigma = (3.800, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3""",
@@ -1320,16 +1434,19 @@ entry(
     label = "CH3CC",
     molecule =
 """
-1 C 0 {2,S}
+1 C 0 {2,S} {4,S} {5,S} {6,S}
 2 C 0 {1,S} {3,T}
 3 C 1 {2,T}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (252.000 * 8.3145, 'J/mol'),
         sigma = (4.760, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3CC""",
@@ -1347,17 +1464,22 @@ entry(
     label = "CH3CCCH2",
     molecule =
 """
-1 C 0 {2,S}
-2 C 1 {1,S} {3,D}
-3 C 0 {2,D} {4,D}
-4 C 0 {3,D}
+1 C 0 {2,S} {5,S} {6,S} {7,S}
+2 C 0 {1,S} {3,T}
+3 C 0 {2,T} {4,S}
+4 C 1 {3,S} {8,S} {9,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {1,S}
+8 H 0 {4,S}
+9 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3CCCH2""",
@@ -1375,17 +1497,23 @@ entry(
     label = "CH3CCCH3",
     molecule =
 """
-1 C 0 {2,S}
+1 C 0 {2,S} {5,S} {6,S} {7,S}
 2 C 0 {1,S} {3,T}
 3 C 0 {2,T} {4,S}
-4 C 0 {3,S}
+4 C 0 {3,S} {8,S} {9,S} {10,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {1,S}
+8 H 0 {4,S}
+9 H 0 {4,S}
+10 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3CCCH3""",
@@ -1403,16 +1531,21 @@ entry(
     label = "CH3CCH2",
     molecule =
 """
-1 C 0 {2,S}
+1 C 0 {2,S} {4,S} {5,S} {6,S}
 2 C 1 {1,S} {3,D}
-3 C 0 {2,D}
+3 C 0 {2,D} {7,S} {8,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {3,S}
+8 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (260.000 * 8.3145, 'J/mol'),
         sigma = (4.850, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3CCH2""",
@@ -1430,16 +1563,21 @@ entry(
     label = "CH3CHCH",
     molecule =
 """
-1 C 0 {2,S}
-2 C 0 {1,S} {3,D}
-3 C 1 {2,D}
+1 C 0 {2,S} {4,S} {5,S} {6,S}
+2 C 0 {1,S} {3,D} {7,S}
+3 C 1 {2,D} {8,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {2,S}
+8 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (260.000 * 8.3145, 'J/mol'),
         sigma = (4.850, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3CHCH""",
@@ -1457,18 +1595,23 @@ entry(
     label = "CH3CH2CCH",
     molecule =
 """
-1 C 0 {2,S}
-2 C 0 {1,S} {3,S}
+1 C 0 {2,S} {5,S} {6,S} {7,S}
+2 C 0 {1,S} {3,S} {8,S} {9,S}
 3 C 0 {2,S} {4,T}
-4 C 0 {3,T}
-
+4 C 0 {3,T} {10,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {1,S}
+8 H 0 {2,S}
+9 H 0 {2,S}
+10 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3CH2CCH""",
@@ -1486,16 +1629,20 @@ entry(
     label = "CH3CHO",
     molecule =
 """
-1 C 0 {2,S}
-2 C 0 {1,S} {3,D}
-3 O 0 {2,D}
+1 C 0 {2,S} {3,S} {4,S} {5,S}
+2 H 0 {1,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
+5 C 0 {1,S} {6,S} {7,D}
+6 H 0 {5,S}
+7 O 0 {5,D}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (436.000 * 8.3145, 'J/mol'),
         sigma = (3.970, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3CHO""",
@@ -1513,17 +1660,19 @@ entry(
     label = "CH2CHO",
     molecule =
 """
-1 C 1 {2,S}
-2 C 0 {1,S} {3,D}
+1 C 1 {2,S} {4,S} {5,S}
+2 C 0 {1,S} {3,D} {6,S}
 3 O 0 {2,D}
-
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {2,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (436.000 * 8.3145, 'J/mol'),
         sigma = (3.970, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH2CHO""",
@@ -1541,16 +1690,19 @@ entry(
     label = "CH3CO",
     molecule =
 """
-1 C 0 {2,S}
+1 C 0 {2,S} {4,S} {5,S} {6,S}
 2 C 1 {1,S} {3,D}
 3 O 0 {2,D}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (436.000 * 8.3145, 'J/mol'),
         sigma = (3.970, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3CO""",
@@ -1568,15 +1720,18 @@ entry(
     label = "CH3O",
     molecule =
 """
-1 C 0 {2,S}
+1 C 0 {2,S} {3,S} {4,S} {5,S}
 2 O 1 {1,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (417.000 * 8.3145, 'J/mol'),
         sigma = (3.690, 'angstroms'),
         dipoleMoment = (1.700, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3O""",
@@ -1594,15 +1749,19 @@ entry(
     label = "CH3OH",
     molecule =
 """
-1 C 0 {2,S}
-2 O 0 {1,S}
+1 C 0 {2,S} {3,S} {4,S} {5,S}
+2 O 0 {1,S} {6,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {2,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (481.800 * 8.3145, 'J/mol'),
         sigma = (3.626, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH3OH""",
@@ -1620,14 +1779,18 @@ entry(
     label = "CH4",
     molecule =
 """
-1 C 0
+1 C 0 {2,S} {3,S} {4,S} {5,S}
+2 H 0 {1,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (141.400 * 8.3145, 'J/mol'),
         sigma = (3.746, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (2.600, 'C*m^2*V^-1'),
+        polarizability = (2.600, 'angstroms^3'),
         rotrelaxcollnum = 13.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH4""",
@@ -1653,7 +1816,7 @@ entry(
         epsilon = (417.000 * 8.3145, 'J/mol'),
         sigma = (3.690, 'angstroms'),
         dipoleMoment = (1.700, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CH4O""",
@@ -1667,20 +1830,20 @@ u"""
 )
 '''
 
-'''
 entry(
     index = 63,
     label = "CN",
     molecule =
 """
-
+1 C 1 {2,T}
+2 N 0 {1,T}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (75.000 * 8.3145, 'J/mol'),
         sigma = (3.856, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CN""",
@@ -1692,7 +1855,6 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
 '''
 entry(
@@ -1707,7 +1869,7 @@ entry(
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CNC""",
@@ -1734,7 +1896,7 @@ entry(
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CNN""",
@@ -1761,7 +1923,7 @@ entry(
         epsilon = (98.100 * 8.3145, 'J/mol'),
         sigma = (3.650, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (1.950, 'C*m^2*V^-1'),
+        polarizability = (1.950, 'angstroms^3'),
         rotrelaxcollnum = 1.800,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CO""",
@@ -1788,7 +1950,7 @@ entry(
         epsilon = (244.000 * 8.3145, 'J/mol'),
         sigma = (3.763, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (2.650, 'C*m^2*V^-1'),
+        polarizability = (2.650, 'angstroms^3'),
         rotrelaxcollnum = 2.100,
     ),
     shortDesc = u"""GRI-Mech3.0 value for CO2""",
@@ -1813,7 +1975,7 @@ entry(
         epsilon = (145.000 * 8.3145, 'J/mol'),
         sigma = (2.050, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H""",
@@ -1839,7 +2001,7 @@ entry(
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2C4O""",
@@ -1866,7 +2028,7 @@ entry(
         epsilon = (38.000 * 8.3145, 'J/mol'),
         sigma = (2.920, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.790, 'C*m^2*V^-1'),
+        polarizability = (0.790, 'angstroms^3'),
         rotrelaxcollnum = 280.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2""",
@@ -1884,17 +2046,20 @@ entry(
     label = "H2CCCCH",
     molecule =
 """
-1 C 0 {2,D}
-2 C 1 {1,D} {3,S}
+1 C 1 {2,S} {5,S} {6,S}
+2 C 0 {1,S} {3,S}
 3 C 0 {2,S} {4,T}
-4 C 0 {3,T}
+4 C 0 {3,T} {7,S}
+5 H 0 {1,S}
+6 H 0 {1,S}
+7 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2CCCCH""",
@@ -1912,17 +2077,20 @@ entry(
     label = "H2CCCCH2",
     molecule =
 """
-1 C 0 {2,D}
+1 C 0 {2,D} {4,S} {5,S}
 2 C 0 {1,D} {3,D}
-3 C 0 {2,D} {4,D}
-4 C 0 {3,D}
+3 C 0 {2,D} {6,S} {7,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {3,S}
+7 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2CCCCH2""",
@@ -1940,16 +2108,19 @@ entry(
     label = "H2CCCH",
     molecule =
 """
-1 C 1 {2,S}
+1 C 1 {2,S} {4,S} {5,S}
 2 C 0 {1,S} {3,T}
-3 C 0 {2,T}
+3 C 0 {2,T} {6,S}
+4 H 0 {1,S}
+5 H 0 {1,S}
+6 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (252.000 * 8.3145, 'J/mol'),
         sigma = (4.760, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2CCCH""",
@@ -1962,20 +2133,22 @@ u"""
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
 
-'''
 entry(
     index = 74,
     label = "H2CN",
     molecule =
 """
-
+1 C 0 {2,D} {3,S} {4,S}
+2 N 1 {1,D}
+3 H 0 {1,S}
+4 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (569.000 * 8.3145, 'J/mol'),
         sigma = (3.630, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2CN""",
@@ -1987,22 +2160,23 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 75,
     label = "H2NO",
     molecule =
 """
-
+1 N 0 {2,S} {3,S} {4,S}
+2 O 1 {1,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (116.700 * 8.3145, 'J/mol'),
         sigma = (3.492, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2NO""",
@@ -2014,21 +2188,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
 entry(
     index = 76,
     label = "H2O",
     molecule =
 """
-1 O 0
+1 O 0 {2,S} {3,S}
+2 H 0 {1,S}
+3 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (572.400 * 8.3145, 'J/mol'),
         sigma = (2.605, 'angstroms'),
         dipoleMoment = (1.844, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 4.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2O""",
@@ -2046,15 +2221,17 @@ entry(
     label = "H2O2",
     molecule =
 """
-1 O 0 {2,S}
-2 O 0 {1,S}
+1 H 0 {2,S}
+2 O 0 {1,S} {3,S}
+3 O 0 {2,S} {4,S}
+4 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (107.400 * 8.3145, 'J/mol'),
         sigma = (3.458, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 3.800,
     ),
     shortDesc = u"""GRI-Mech3.0 value for H2O2""",
@@ -2067,20 +2244,23 @@ u"""
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
 
-'''
 entry(
     index = 78,
     label = "HC2N2",
     molecule =
 """
-
+1 H 0 {2,S}
+2 C 0 {1,S} {3,T}
+3 C 0 {2,T} {4,S}
+4 N 0 {3,S} {5,D}
+5 N 1 {4,D}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (349.000 * 8.3145, 'J/mol'),
         sigma = (4.361, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HC2N2""",
@@ -2092,24 +2272,26 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
 entry(
     index = 79,
     label = "HCCHCCH",
     molecule =
 """
-1 C 1 {2,D}
-2 C 0 {1,D} {3,S}
+1 C 1 {2,D} {5,S}
+2 C 0 {1,D} {3,S} {6,S}
 3 C 0 {2,S} {4,T}
-4 C 0 {3,T}
+4 C 0 {3,T} {7,S}
+5 H 0 {1,S}
+6 H 0 {2,S}
+7 H 0 {4,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (357.000 * 8.3145, 'J/mol'),
         sigma = (5.180, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HCCHCCH""",
@@ -2127,16 +2309,17 @@ entry(
     label = "HCCO",
     molecule =
 """
-1 C 1 {2,D}
+1 C 1 {2,D} {4,S}
 2 C 0 {1,D} {3,D}
 3 O 0 {2,D}
+4 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (150.000 * 8.3145, 'J/mol'),
         sigma = (2.500, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HCCO""",
@@ -2149,20 +2332,22 @@ u"""
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
 
-'''
 entry(
     index = 81,
     label = "HCNN",
     molecule =
 """
-
+1 C 0 0 {2,T} {4,S}
+2 N 0 0 {1,T} {3,S}
+3 N 1 2 {2,S}
+4 H 0 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (150.000 * 8.3145, 'J/mol'),
         sigma = (2.500, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HCNN""",
@@ -2174,23 +2359,24 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
 entry(
     index = 82,
     label = "HCCOH",
     molecule =
 """
-1 C 0 {2,T}
+1 C 0 {2,T} {4,S}
 2 C 0 {1,T} {3,S}
-3 O 0 {2,S}
+3 O 0 {2,S} {5,S}
+4 H 0 {1,S}
+5 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (436.000 * 8.3145, 'J/mol'),
         sigma = (3.970, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 2.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HCCOH""",
@@ -2203,20 +2389,21 @@ u"""
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
 
-'''
 entry(
     index = 83,
     label = "HCN",
     molecule =
 """
-
+1 H 0 {2,S}
+2 C 0 {1,S} {3,T}
+3 N 0 {2,T}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (569.000 * 8.3145, 'J/mol'),
         sigma = (3.630, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HCN""",
@@ -2228,22 +2415,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
 entry(
     index = 84,
     label = "HCO",
     molecule =
 """
-1 C 1 {2,D}
+1 C 1 {2,D} {3,S}
 2 O 0 {1,D}
+3 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (498.000 * 8.3145, 'J/mol'),
         sigma = (3.590, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HCO""",
@@ -2269,7 +2456,7 @@ entry(
         epsilon = (10.200 * 8.3145, 'J/mol'),
         sigma = (2.576, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HE""",
@@ -2283,20 +2470,22 @@ u"""
 )
 '''
 
-'''
 entry(
     index = 86,
     label = "HCNO",
     molecule =
 """
-
+1 H 0 0 {2,S}
+2 C 0 0 {1,S} {3,T}
+3 N 0 0 {2,T} {4,S}
+4 O 0 3 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HCNO""",
@@ -2308,22 +2497,23 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 87,
     label = "HOCN",
     molecule =
 """
-
+1 H 0 {2,S}
+2 O 0 {1,S} {3,S}
+3 C 0 {2,S} {4,T}
+4 N 0 {3,T}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HOCN""",
@@ -2335,22 +2525,23 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 88,
     label = "HNCO",
     molecule =
 """
-
+1 H 0 {2,S}
+2 N 0 {1,S} {3,D}
+3 C 0 {2,D} {4,D}
+4 O 0 {3,D}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HNCO""",
@@ -2362,22 +2553,23 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 89,
     label = "HNNO",
     molecule =
 """
-
+1 H 0 {2,S}
+2 N 0 {1,S} {3,D}
+3 N 0 {2,D} {4,S}
+4 O 1 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HNNO""",
@@ -2389,22 +2581,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 90,
     label = "HNO",
     molecule =
 """
-
+1 H 0 {2,S}
+2 N 0 {1,S} {3,D}
+3 O 0 {2,D}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (116.700 * 8.3145, 'J/mol'),
         sigma = (3.492, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HNO""",
@@ -2416,22 +2608,23 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 91,
     label = "HNOH",
     molecule =
 """
-
+1 H 0 {2,S}
+2 N 1 {1,S} {3,S}
+3 O 0 {2,S} {4,S}
+4 H 0 {3,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (116.700 * 8.3145, 'J/mol'),
         sigma = (3.492, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HNOH""",
@@ -2443,7 +2636,6 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
 entry(
     index = 92,
@@ -2451,14 +2643,15 @@ entry(
     molecule =
 """
 1 O 1 {2,S}
-2 O 0 {1,S}
+2 O 0 {1,S} {3,S}
+3 H 0 {2,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (107.400 * 8.3145, 'J/mol'),
         sigma = (3.458, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for HO2""",
@@ -2471,20 +2664,19 @@ u"""
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
 
-'''
 entry(
     index = 93,
-    label = "N",
+    label = "N(Q)",
     molecule =
 """
-
+1 N 3Q
 """,
     transport = TransportData(
         shapeIndex = 0,
         epsilon = (71.400 * 8.3145, 'J/mol'),
         sigma = (3.298, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for N""",
@@ -2496,22 +2688,21 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 94,
     label = "N2",
     molecule =
 """
-
+1 N 0 {2,T}
+2 N 0 {1,T}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (97.530 * 8.3145, 'J/mol'),
         sigma = (3.621, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (1.760, 'C*m^2*V^-1'),
+        polarizability = (1.760, 'angstroms^3'),
         rotrelaxcollnum = 4.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for N2""",
@@ -2523,22 +2714,23 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 95,
     label = "N2H2",
     molecule =
 """
-
+1 N 0 {2,D} {3,S}
+2 N 0 {1,D} {4,S}
+3 H 0 {1,S}
+4 H 0 {2,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (71.400 * 8.3145, 'J/mol'),
         sigma = (3.798, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for N2H2""",
@@ -2550,22 +2742,24 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 96,
     label = "N2H3",
     molecule =
 """
-
+1 N 0 {2,S} {3,S} {4,S}
+2 N 1 {1,S} {5,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
+5 H 0 {2,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (200.000 * 8.3145, 'J/mol'),
         sigma = (3.900, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for N2H3""",
@@ -2577,22 +2771,25 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 97,
     label = "N2H4",
     molecule =
 """
-
+1 N 0 {2,S} {3,S} {4,S}
+2 N 0 {1,S} {5,S} {6,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
+5 H 0 {2,S}
+6 H 0 {2,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (205.000 * 8.3145, 'J/mol'),
         sigma = (4.230, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (4.260, 'C*m^2*V^-1'),
+        polarizability = (4.260, 'angstroms^3'),
         rotrelaxcollnum = 1.500,
     ),
     shortDesc = u"""GRI-Mech3.0 value for N2H4""",
@@ -2604,22 +2801,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 98,
     label = "N2O",
     molecule =
 """
-
+1 N 0 2 {2,D}
+2 N 0 0 {1,D} {3,D}
+3 O 0 2 {2,D}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for N2O""",
@@ -2631,22 +2828,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 99,
     label = "NCN",
     molecule =
 """
-
+1 N 1 {2,D}
+2 C 0 {1,D} {3,D}
+3 N 1 {2,D}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NCN""",
@@ -2658,22 +2855,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 100,
     label = "NCO",
     molecule =
 """
-
+1 N 0 {2,T}
+2 C 0 {1,T} {3,S}
+3 O 1 {2,S}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NCO""",
@@ -2685,22 +2882,21 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 101,
-    label = "NH",
+    label = "NH(T)",
     molecule =
 """
-
+1 N 2T {2,S}
+2 H 0  {1,S}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (80.000 * 8.3145, 'J/mol'),
         sigma = (2.650, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 4.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NH""",
@@ -2712,22 +2908,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 102,
     label = "NH2",
     molecule =
 """
-
+1 N 1 {2,S} {3,S}
+2 H 0 {1,S}
+3 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (80.000 * 8.3145, 'J/mol'),
         sigma = (2.650, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (2.260, 'C*m^2*V^-1'),
+        polarizability = (2.260, 'angstroms^3'),
         rotrelaxcollnum = 4.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NH2""",
@@ -2739,22 +2935,23 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 103,
     label = "NH3",
     molecule =
 """
-
+1 N 0 {2,S} {3,S} {4,S}
+2 H 0 {1,S}
+3 H 0 {1,S}
+4 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (481.000 * 8.3145, 'J/mol'),
         sigma = (2.920, 'angstroms'),
         dipoleMoment = (1.470, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 10.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NH3""",
@@ -2766,22 +2963,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 104,
     label = "NNH",
     molecule =
 """
-
+1 N 1 1 {2,D}
+2 N 0 1 {1,D} {3,S}
+3 H 0 0 {2,S}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (71.400 * 8.3145, 'J/mol'),
         sigma = (3.798, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NNH""",
@@ -2793,22 +2990,21 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 105,
     label = "NO",
     molecule =
 """
-
+1 N 1 1 {2,D}
+2 O 0 2 {1,D}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (97.530 * 8.3145, 'J/mol'),
         sigma = (3.621, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (1.760, 'C*m^2*V^-1'),
+        polarizability = (1.760, 'angstroms^3'),
         rotrelaxcollnum = 4.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NO""",
@@ -2820,22 +3016,23 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 106,
     label = "NCNO",
     molecule =
 """
-
+1 N 0 {2,T}
+2 C 0 {1,T} {3,S}
+3 N 0 {2,S} {4,D}
+4 O 0 {3,D}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (232.400 * 8.3145, 'J/mol'),
         sigma = (3.828, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NCNO""",
@@ -2847,22 +3044,22 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
-'''
 entry(
     index = 107,
     label = "NO2",
     molecule =
 """
-
+1 N 1 0 {2,S} {3,D}
+2 O 0 3 {1,S}
+3 O 0 2 {1,D}
 """,
     transport = TransportData(
         shapeIndex = 2,
         epsilon = (200.000 * 8.3145, 'J/mol'),
         sigma = (3.500, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 1.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for NO2""",
@@ -2874,11 +3071,10 @@ u"""
         ("2013/04/17 21:20:48","Jake Barlow <barlow.ja@husky.neu.edu>","action",
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
-'''
 
 entry(
     index = 108,
-    label = "O",
+    label = "O(T)",
     molecule =
 """
 1 O 2T
@@ -2888,7 +3084,7 @@ entry(
         epsilon = (80.000 * 8.3145, 'J/mol'),
         sigma = (2.750, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for O""",
@@ -2914,7 +3110,7 @@ entry(
         epsilon = (107.400 * 8.3145, 'J/mol'),
         sigma = (3.458, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (1.600, 'C*m^2*V^-1'),
+        polarizability = (1.600, 'angstroms^3'),
         rotrelaxcollnum = 3.800,
     ),
     shortDesc = u"""GRI-Mech3.0 value for O2""",
@@ -2932,14 +3128,15 @@ entry(
     label = "OH",
     molecule =
 """
-1 O 1
+1 O 1 {2,S}
+2 H 0 {1,S}
 """,
     transport = TransportData(
         shapeIndex = 1,
         epsilon = (80.000 * 8.3145, 'J/mol'),
         sigma = (2.750, 'angstroms'),
         dipoleMoment = (0.000, 'C*m'),
-        polarizability = (0.000, 'C*m^2*V^-1'),
+        polarizability = (0.000, 'angstroms^3'),
         rotrelaxcollnum = 0.000,
     ),
     shortDesc = u"""GRI-Mech3.0 value for OH""",
