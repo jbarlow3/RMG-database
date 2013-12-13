@@ -343,6 +343,125 @@ u"""
         """Jake Barlow <barlow.ja@husky.neu.edu> imported this entry from the old RMG database."""),    ],
 )
 
+entry(
+    index = 9,
+    label = "N_centered_ring",
+    group =
+"""
+
+""",
+    transportGroup = CriticalPointGroupContribution(
+        Tc = 0,
+        Pc = 0,
+        Vc = 0,
+        Tb = 0,
+        structureIndex = 1,
+    ),
+    shortDesc = u"""ring_library value for N_centered_ring""",
+    longDesc = 
+u"""
+
+""",
+    history = [
+        ("2013/12/09 11:25:00","Jake Barlow <barlow.ja@husky.neu.edu>","action",
+        """Jake Barlow <barlow.ja@husky.neu.edu> added entry from Joback's thesis."""),    ],
+)
+
+entry(
+    index = 10,
+    label = "N3s_ring",
+    group =
+"""
+
+""",
+    transportGroup = CriticalPointGroupContribution(
+        Tc = 0,
+        Pc = 0,
+        Vc = 0,
+        Tb = 0,
+        structureIndex = 1,
+    ),
+    shortDesc = u"""ring_library value for N3s_ring""",
+    longDesc = 
+u"""
+
+""",
+    history = [
+        ("2013/12/09 11:25:00","Jake Barlow <barlow.ja@husky.neu.edu>","action",
+        """Jake Barlow <barlow.ja@husky.neu.edu> added entry from Joback's thesis."""),    ],
+)
+
+entry(
+    index = 11,
+    label = "N3s-RRH_ring",
+    group =
+"""
+
+""",
+    transportGroup = CriticalPointGroupContribution(
+        Tc = 0.0130,
+        Pc = 0.0114,
+        Vc = 29,
+        Tb = 52.82,
+        structureIndex = 1,
+    ),
+    shortDesc = u"""ring_library value for N3s-RRH_ring""",
+    longDesc = 
+u"""
+
+""",
+    history = [
+        ("2013/12/09 11:25:00","Jake Barlow <barlow.ja@husky.neu.edu>","action",
+        """Jake Barlow <barlow.ja@husky.neu.edu> added entry from Joback's thesis."""),    ],
+)
+
+entry(
+    index = 12,
+    label = "N3s-RRR_ring",
+    group =
+"""
+
+""",
+    transportGroup = CriticalPointGroupContribution(
+        Tc = 0,
+        Pc = 0,
+        Vc = 0,
+        Tb = 0,
+        structureIndex = 1,
+    ),
+    shortDesc = u"""ring_library value for N3s-RRR_ring""",
+    longDesc = 
+u"""
+Entry not found in Joback's thesis
+""",
+    history = [
+        ("2013/12/09 11:25:00","Jake Barlow <barlow.ja@husky.neu.edu>","action",
+        """Jake Barlow <barlow.ja@husky.neu.edu> added entry from Joback's thesis."""),    ],
+)
+
+entry(
+    index = 12,
+    label = "N3d_ring",
+    group =
+"""
+
+""",
+    transportGroup = CriticalPointGroupContribution(
+        Tc = 0.0085,
+        Pc = 0.0076,
+        Vc = 34,
+        Tb = 57.55,
+        structureIndex = 1,
+    ),
+    shortDesc = u"""ring_library value for N3d_ring""",
+    longDesc = 
+u"""
+
+""",
+    history = [
+        ("2013/12/09 11:25:00","Jake Barlow <barlow.ja@husky.neu.edu>","action",
+        """Jake Barlow <barlow.ja@husky.neu.edu> added entry from Joback's thesis."""),    ],
+)
 
 tree(
 """
@@ -365,8 +484,8 @@ L0: R_ring
     
     L1: N_centered_ring
         L2: N3s_ring
-            L3: N3s-RRH_ring #>NH
-            L3: N3s-RRR_ring # >N-
-        L2: N3d #-N=
+            L3: N3s-RRH_ring
+            L3: N3s-RRR_ring
+        L2: N3d_ring
 """
 )
