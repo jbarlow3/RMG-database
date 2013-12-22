@@ -774,7 +774,9 @@ entry(
     label = "Ct-HN3t",
     group =
 """
-
+1 * C 0 {2,T} {3,S}
+2 N 0 {1,T}
+3 H 0 {1,S}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0.0496,
@@ -798,7 +800,7 @@ entry(
     label = "N_centered",
     group =
 """
-
+1 * N {0,1,2}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0,
@@ -822,7 +824,7 @@ entry(
     label = "N2d",
     group =
 """
-
+1 * N2d {0,1,2}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0,
@@ -846,7 +848,7 @@ entry(
     label = "N3s",
     group =
 """
-
+1 * N3s {0,1,2}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0,
@@ -870,7 +872,10 @@ entry(
     label = "N3s-RHH",
     group =
 """
-
+1 * N3s  0  {2,S} {3,S} {4,S}
+2   R!H  0  {1,S}
+3   H    0  {1,S}
+3   H    0  {1,S}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0.0243,
@@ -894,7 +899,10 @@ entry(
     label = "N3s-RRH",
     group =
 """
-
+1 * N3s 0 {2,S} {3,S} {4,S}
+2   R!H 0 {1,S}
+3   R!H 0 {1,S}
+4   H   0 {1,S}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0.0130,
@@ -918,7 +926,10 @@ entry(
     label = "N3s-RRR",
     group =
 """
-
+1 * N3s 0 {2,S} {3,S} {4,S}
+2   R!H 0 {1,S}
+3   R!H 0 {1,S}
+4   R!H 0 {1,S}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0.0169,
@@ -942,7 +953,7 @@ entry(
     label = "N3d",
     group =
 """
-
+1 * N3d {0,1}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0.0255,
@@ -966,7 +977,7 @@ entry(
     label = "N5d",
     group =
 """
-
+1 * N5d {0,1,2}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0,
@@ -987,10 +998,13 @@ u"""
 
 entry(
     index = 36,
-    label = "N5d-OdOdR",
+    label = "N5d-OdOsR",
     group =
 """
-
+1 * N5d 0 {2,D} {3,S} {4,S}
+2   Od  0 {1,D}
+3   Os  0 {1,S}
+4   R   0 {1,S}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0.0437,
@@ -999,7 +1013,7 @@ entry(
         Tb = 152.54,
         structureIndex = 1,
     ),
-    shortDesc = u"""nonring_library value for N5d-OdOdR""",
+    shortDesc = u"""nonring_library value for N5d-OdOsR""",
     longDesc = 
 u"""
 

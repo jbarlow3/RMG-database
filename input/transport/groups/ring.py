@@ -348,7 +348,7 @@ entry(
     label = "N_centered_ring",
     group =
 """
-
+1 * N {0,1,2}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0,
@@ -372,7 +372,7 @@ entry(
     label = "N3s_ring",
     group =
 """
-
+1 * N3s {0,1,2}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0,
@@ -396,7 +396,10 @@ entry(
     label = "N3s-RRH_ring",
     group =
 """
-
+1 * N3s 0 {2,S} {3,S} {4,S}
+2   R!H 0 {1,S}
+3   R!H 0 {1,S}
+4   H   0 {1,S}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0.0130,
@@ -420,7 +423,10 @@ entry(
     label = "N3s-RRR_ring",
     group =
 """
-
+1 * N3s 0 {2,S} {3,S} {4,S}
+2   R!H 0 {1,S}
+3   R!H 0 {1,S}
+4   R!H 0 {1,S}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0,
@@ -444,7 +450,7 @@ entry(
     label = "N3d_ring",
     group =
 """
-
+1 * N3d {0,1}
 """,
     transportGroup = CriticalPointGroupContribution(
         Tc = 0.0085,
